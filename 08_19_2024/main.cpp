@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm>
 #include <limits>
+#include "clock.h"
 
 enum rankType
 {
@@ -33,11 +34,15 @@ private:
 
 int main()
 {
-    cardType myCard;
-    myCard.setSuit("SPADES");
-    // myCard.rank = ACE;
-    //  std::cout << myCard;
-    //  std::cin >> myCard;
+    clockType myClock;
+    clockType classClock(16, 16, 34);
+    std::cout << myClock.printTime() << std::endl;
+    std::cout << classClock.printTime() << std::endl;
+    // cardType myCard;
+    // myCard.setSuit("SPADES");
+    //  myCard.rank = ACE;
+    //   std::cout << myCard;
+    //   std::cin >> myCard;
 
     return 0;
 }

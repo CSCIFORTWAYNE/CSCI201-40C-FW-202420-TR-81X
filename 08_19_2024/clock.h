@@ -4,6 +4,8 @@
 class clockType
 {
 public:
+    clockType();
+    clockType(int, int, int);
     void setTime(int, int, int);
     void getTime(int &, int &, int &) const;
     std::string printTime() const;
