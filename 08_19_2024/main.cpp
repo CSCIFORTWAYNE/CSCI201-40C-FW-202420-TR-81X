@@ -20,8 +20,13 @@ enum rankType
     KING
 };
 
-struct cardType
+class cardType
 {
+public:
+    std::string getSuit();
+    void setSuit(std::string s);
+
+private:
     std::string suit;
     rankType rank;
 };
@@ -29,10 +34,10 @@ struct cardType
 int main()
 {
     cardType myCard;
-    myCard.suit = "SPADES";
-    myCard.rank = ACE;
-    // std::cout << myCard;
-    // std::cin >> myCard;
+    myCard.setSuit("SPADES");
+    // myCard.rank = ACE;
+    //  std::cout << myCard;
+    //  std::cin >> myCard;
 
     return 0;
 }
