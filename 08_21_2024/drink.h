@@ -52,11 +52,24 @@ const std::string flavStr[] = {"Almond",
                                "Peppermint",
                                "Raspberry",
                                "Strawberry"};
+const flavType flavs[]{
+    ALMOND,
+    APPLE,
+    BLUEBERRY,
+    BUTTERPECAN,
+    CARAMEL,
+    FRENCHVANILLA,
+    PEACH,
+    PEPPERMINT,
+    RASPBERRY,
+    STRAWBERRY
+
+};
 
 class drink
 {
 public:
-    drink(baseType, tempType, sizeType, flavType[], std::string dairy);
+    drink(baseType, tempType, sizeType, flavType[], int, std::string dairy);
     std::string getBaseStr() const;
     std::string getTemperature() const;
     std::string getSize() const;
@@ -77,5 +90,6 @@ private:
     tempType temperature;
     sizeType size;
     flavType flavors[10];
+    int numFlavs;
     std::string dairy;
 };
