@@ -9,6 +9,9 @@ public:
     drinkOrder();
     drinkOrder(const drinkOrder &);
     ~drinkOrder();
+    void addDrink(const drink &);
+    void addDrinks(drink **, int numD);
+    std::string toString() const;
 
 private:
     drink **drinks;

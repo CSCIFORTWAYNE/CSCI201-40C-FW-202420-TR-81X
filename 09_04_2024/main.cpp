@@ -4,7 +4,10 @@
 #include "drink.h"
 #include "drinkOrder.h"
 
-// lecture activity comment lines 25 - 30, 32, 46, 50, 59, 61, 74 - 80
+// lecture activity replace line 63 so that it puts the drink into order2 instead of the array.
+// remove lines 77 - 86
+// change the output on line 95 to display order2 instead of order1.
+
 void resetStream();
 sizeType inputDrinkSize();
 baseType inputDrinkBase();
@@ -23,8 +26,7 @@ int main()
 {
 
     drinkOrder order1;
-    drinkOrder order2 = order1;
-    order1 = order2;
+
     int x = 79;
     int *p = nullptr;
     p = &x;
@@ -48,7 +50,8 @@ int main()
     flavor = inputDrinkFlavor();
     dairy = inputDrinkDairy();
     myDrink = new drink(drinkBase, drinkTemp, drinkSize, dairy, flavor);
-
+    order1.addDrink(*myDrink);
+    drinkOrder order2 = order1;
     // int numDrinks = inputInt("How many drinks do you want? ", numGT0);
     int numDrinks = 1;
     drinks = new drink *[numDrinks];
@@ -84,14 +87,16 @@ int main()
             delete[] d;
         }
     }
+    // order1.addDrinks(drinks, numDrinks);
 
-    std::cout << "The list of drinks is:" << std::endl;
+    /* std::cout << "The list of drinks is:" << std::endl;
     std::cout << myDrink->tostring() << std::endl;
-
+ */
+    std::cout << order1.toString() << std::endl;
     delete myDrink;
     for (int i = 0; i < numDrinks; i++)
     {
-        std::cout << drinks[i]->tostring() << std::endl;
+        // std::cout << drinks[i]->tostring() << std::endl;
         delete drinks[i];
     }
     delete[] drinks;
