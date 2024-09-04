@@ -1,0 +1,4 @@
+/home/avenable11/CSCI201-40C-FW-202420-TR-81X/09_04_2024/Unit Test/CMakeFiles/student.dir
+/home/avenable11/CSCI201-40C-FW-202420-TR-81X/09_04_2024/Unit Test/CMakeFiles/runTests.dir
+/home/avenable11/CSCI201-40C-FW-202420-TR-81X/09_04_2024/Unit Test/CMakeFiles/edit_cache.dir
+/home/avenable11/CSCI201-40C-FW-202420-TR-81X/09_04_2024/Unit Test/CMakeFiles/rebuild_cache.dir
