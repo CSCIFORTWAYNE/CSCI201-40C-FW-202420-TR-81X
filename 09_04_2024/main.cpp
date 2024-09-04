@@ -1,6 +1,7 @@
 #include <iostream>
 #include <limits>
 #include <cctype>
+#include <memory>
 #include "drink.h"
 #include "drinkOrder.h"
 
@@ -26,6 +27,8 @@ int main()
 {
 
     drinkOrder order1;
+
+    std::unique_ptr<int> intPtr(new int(4));
 
     int x = 79;
     int *p = nullptr;
