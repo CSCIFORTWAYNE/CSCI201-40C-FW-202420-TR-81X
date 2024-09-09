@@ -5,7 +5,10 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/main",
-            "args": [],
+            "args": [
+                "<",
+                "input.txt"
+            ],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

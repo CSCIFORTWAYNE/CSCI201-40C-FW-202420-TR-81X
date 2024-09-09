@@ -37,3 +37,7 @@ std::string employee::tostring() const
     output += "Hire Date: " + hireDate + "\n";
     return output;
 }
+
+void example()
+{
+}

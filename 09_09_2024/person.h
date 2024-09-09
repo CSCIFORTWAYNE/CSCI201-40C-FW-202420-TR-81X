@@ -16,6 +16,7 @@ public:
     void setAddress(std::string);
     void setPhone(std::string);
     void setEmail(std::string);
+    // virtual void example() = 0;
 
 protected:
     std::string fname;

@@ -1,0 +1,9 @@
+drink
+1
+2
+1
+raspberry
+milk
+y
+ice cream
+n

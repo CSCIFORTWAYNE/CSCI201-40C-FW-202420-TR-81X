@@ -10,6 +10,7 @@ public:
     std::string getHireDate() const;
     void setSalary(double sal);
     std::string tostring() const;
+    void example();
 
 private:
     double salary;

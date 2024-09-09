@@ -11,10 +11,10 @@ void resetStream();
 
 int main()
 {
-    person myPerson("Ansegar", "Goodwort");
+    // person myPerson("Ansegar", "Goodwort");
     employee myEmployee("Wichmann", "Hedgehopper", "2221112222", "2024-09-09");
 
-    printPerson(myPerson);
+    // printPerson(myPerson);
     printPerson(myEmployee);
 
     int numPeople;
