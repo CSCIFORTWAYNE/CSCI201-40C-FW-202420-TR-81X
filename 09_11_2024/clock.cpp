@@ -259,3 +259,81 @@ clockType &clockType::operator+(int secondsToAdd)
     }
     return *this;
 }
+
+void clockType::setClockType(cType type)
+{
+    this->type = type;
+}
+
+clockType &operator+(int secondsToAdd, clockType &rightClock)
+{
+    return rightClock + secondsToAdd;
+}
+
+std::ostream &operator<<(std::ostream &out, const clockType &rightClock)
+{
+    out << rightClock.printTime();
+    return out;
+}
+
+std::istream &operator>>(std::istream &in, clockType &rightClock)
+{
+    std::cin >> std::ws;
+    std::string clockStr;
+    std::getline(std::cin, clockStr);
+    std::istringstream inStr(clockStr);
+    inStr >> rightClock.hr;
+    char colon;
+    inStr >> colon;
+    inStr >> rightClock.min;
+    inStr >> colon;
+    inStr >> rightClock.sec;
+    inStr.get();
+    if (!inStr || inStr.eof())
+    {
+        rightClock.setClockType(TWENTYFOUR);
+        return in;
+    }
+    else
+    {
+        rightClock.setClockType(TWELVE);
+        std::string tod;
+        inStr >> tod;
+        std::transform(tod.begin(), tod.end(), tod.begin(), ::toupper);
+        if (tod == "AM")
+        {
+            rightClock.setTimeOfDay(AM);
+        }
+        else if (tod == "PM")
+        {
+            rightClock.setTimeOfDay(PM);
+        }
+        else
+        {
+            rightClock.setClockType(TWENTYFOUR);
+        }
+    }
+    return in;
+}
+const clockType &clockType::operator=(const clockType &rightClock)
+{
+    this->hr = rightClock.hr;
+    this->min = rightClock.min;
+    this->sec = rightClock.sec;
+    this->tod = rightClock.tod;
+    this->type = rightClock.type;
+    return *this;
+}
+
+clockType clockType::operator++()
+{
+    incrementSeconds();
+    return *this;
+}
+
+clockType clockType::operator++(int)
+{
+    clockType temp = *this;
+    this->incrementSeconds();
+    return temp;
+}
