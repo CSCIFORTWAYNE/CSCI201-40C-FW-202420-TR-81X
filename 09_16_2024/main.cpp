@@ -4,9 +4,15 @@
 #include <array>
 #include <random>
 #include "clock.h"
+#include "product.h"
+
+// add static maps for the rest of the drink enums
+// add static maps to the clock class for the enums
 
 template <class t>
 t findLargest(const std::vector<t> &, int numItems);
+
+bool isValidDairy(std::string dairy);
 
 int main()
 {
@@ -52,7 +58,45 @@ int main()
          delete clockList[i];
      }
      delete[] clockList; */
-
+    std::string drinkBaseStr;
+    std::cout << "Enter the drink base: ";
+    std::cin >> drinkBaseStr;
+    std::transform(drinkBaseStr.begin(), drinkBaseStr.end(), drinkBaseStr.begin(), ::tolower);
+    while (!drink::stringToBase.count(drinkBaseStr))
+    {
+        std::cout << "That is not a valid drink base. Please choose from the following:" << std::endl;
+        std::map<baseType, std::string>::iterator it = drink::baseToString.begin();
+        for (it; it != drink::baseToString.end(); it++)
+        {
+            std::cout << it->second << std::endl;
+        }
+        std::cin >> drinkBaseStr;
+        std::transform(drinkBaseStr.begin(), drinkBaseStr.end(), drinkBaseStr.begin(), ::tolower);
+    }
+    baseType b = drink::stringToBase.at(drinkBaseStr);
+    std::string dairyStr;
+    std::cout << "Enter the dairy for the drink: ";
+    std::getline(std::cin >> std::ws, dairyStr);
+    std::string dairyCpy = dairyStr;
+    std::transform(dairyStr.begin(), dairyStr.end(), dairyCpy.begin(), ::tolower);
+    dairyCpy[0] = toupper(dairyCpy[0]);
+    int i = dairyCpy.find_first_of(' ');
+    dairyCpy[i + 1] = toupper(dairyCpy[i + 1]);
+    while (!isValidDairy(dairyStr))
+    {
+        std::cout << "That is not a valid dairy option. Please choose from the following:" << std::endl;
+        std::set<std::string>::iterator it = drink::dairyOptions.begin();
+        for (it; it != drink::dairyOptions.end(); it++)
+        {
+            std::cout << *it << std::endl;
+        }
+        std::getline(std::cin >> std::ws, dairyStr);
+        dairyCpy = dairyStr;
+        std::transform(dairyStr.begin(), dairyStr.end(), dairyCpy.begin(), ::tolower);
+        dairyCpy[0] = toupper(dairyCpy[0]);
+        int i = dairyCpy.find_first_of(' ');
+        dairyCpy[i + 1] = toupper(dairyCpy[i + 1]);
+    }
     return 0;
 }
 
@@ -68,4 +112,19 @@ t findLargest(const std::vector<t> &list, int numItems)
         }
     }
     return list[largestPos];
+}
+
+bool isValidDairy(std::string dairy)
+{
+
+    std::transform(dairy.begin(), dairy.end(), dairy.begin(), ::tolower);
+    std::set<std::string>::iterator it = drink::dairyOptions.begin();
+    for (it; it != drink::dairyOptions.end(); it++)
+    {
+        std::string optionCpy = *it;
+        std::transform(optionCpy.begin(), optionCpy.end(), optionCpy.begin(), ::tolower);
+        if (dairy == optionCpy)
+            return true;
+    }
+    return false;
 }

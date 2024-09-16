@@ -1,3 +1,5 @@
+#ifndef CLOCK_H
+#define CLOCK_H
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -56,3 +58,4 @@ private:
     todType tod;
     cType type;
 };
+#endif
