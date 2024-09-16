@@ -337,3 +337,76 @@ clockType clockType::operator++(int)
     this->incrementSeconds();
     return temp;
 }
+
+bool clockType::operator>(const clockType &rightClock) const
+{
+    bool eq;
+    int cmpH;
+    int cmpOH;
+    if (type == TWELVE)
+    {
+        if (tod == AM && hr != 12)
+        {
+            cmpH = hr;
+        }
+        else if (tod == AM && hr == 12)
+        {
+            cmpH = 0;
+        }
+        else if (hr == 12)
+        {
+            cmpH = hr;
+        }
+        else
+        {
+            cmpH = hr + 12;
+        }
+    }
+    else
+    {
+        cmpH = hr;
+    }
+    if (rightClock.type == TWELVE)
+    {
+        if (rightClock.tod == AM && rightClock.hr != 12)
+        {
+            cmpOH = rightClock.hr;
+        }
+        else if (rightClock.tod == AM && rightClock.hr == 12)
+        {
+            cmpOH = 0;
+        }
+        else if (rightClock.hr == 12)
+        {
+            cmpOH = rightClock.hr;
+        }
+        else
+        {
+            cmpOH = rightClock.hr + 12;
+        }
+    }
+    else
+    {
+        cmpOH = rightClock.hr;
+    }
+    bool greater = false;
+    if (cmpH > cmpOH)
+    {
+        greater = true;
+    }
+    else if (cmpH == cmpOH)
+    {
+        if (this->min > rightClock.min)
+        {
+            greater = true;
+        }
+        else if (this->min == rightClock.min)
+        {
+            if (this->sec > rightClock.sec)
+            {
+                greater = true;
+            }
+        }
+    }
+    return greater;
+}

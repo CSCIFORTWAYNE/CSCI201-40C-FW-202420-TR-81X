@@ -36,6 +36,7 @@ public:
     void incrementHours();
     bool operator==(const clockType &rightClock) const;
     bool operator!=(const clockType &rightClock) const;
+    bool operator>(const clockType &rightClock) const;
     clockType &operator+(int secondsToAdd);
     const clockType &operator=(const clockType &rightClock);
     clockType operator++();
