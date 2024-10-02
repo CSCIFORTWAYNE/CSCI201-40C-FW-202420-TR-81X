@@ -19,6 +19,7 @@ private:
 	AutoScroller scroller;
 	WithDrinks<ParentCtrl> scroller_view;
 	drink d;
+	Option flavor[NUM_FLAV];
 };
 
 MyAppWindow::MyAppWindow()
@@ -32,6 +33,28 @@ MyAppWindow::MyAppWindow()
 	scroller_view.base = -1;
 	scroller_view.size = -1;
 	scroller_view.temp = -1;
+	for(int i = 0; i < NUM_DAIRY; i++)
+	{
+		scroller_view.dairy.Add(dairyStr[i]);
+	}
+	
+	for(int i = 0; i < NUM_FLAV; i++)
+	{
+		flavor[i].SetLabel(flavStr[i].c_str()).SetFont(Upp::StdFontZ(14));
+	}
+	int l = 0;
+	int optionSize = 120;
+	int checkDist = 20;
+	int checkCount = 0;
+	for(int i = 0; i < NUM_FLAV; i++)
+	{
+		scroller_view.flavorOptions.Add(flavor[i].LeftPosZ(l+optionSize*(i%2), optionSize).TopPosZ(0 + checkDist * checkCount));
+		if(i %2 == 1)
+		{
+			checkCount++;
+		}
+		
+	}
 }
 
 GUI_APP_MAIN

@@ -39,7 +39,8 @@ enum flavType
 	STRAWBERRY
 
 };
-
+const int NUM_DAIRY = 6;
+const int NUM_FLAV = 10;
 const std::string baseStr[] = {"Coffee", "Tea", "Cream"};
 const std::string tempStr[] = {"Hot", "Iced", "Blended"};
 const std::string sizeStr[] = {"Small", "Medium", "Large"};
