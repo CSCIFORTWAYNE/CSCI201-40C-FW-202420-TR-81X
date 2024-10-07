@@ -81,7 +81,7 @@ const std::string dairyStr[] = {"None",
 class drink
 {
 public:
-	drink(baseType = CREAM, tempType = HOT, sizeType = SMALL, std::string dairy = "");
+	drink(baseType = CREAM, tempType = HOT, sizeType = SMALL, std::string dairy = "None");
 	
 	std::string getBaseStr() const;
 	std::string getTemperature() const;

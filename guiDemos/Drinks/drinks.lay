@@ -1,19 +1,22 @@
 LAYOUT(MainAppWindow, 812, 504)
 END_LAYOUT
 
-LAYOUT(Drinks, 712, 520)
+LAYOUT(Drinks, 800, 472)
+	ITEM(Upp::ImageCtrl, snowball, LeftPosZ(296, 148).TopPosZ(12, 204))
 	ITEM(Upp::Label, baseLbl, SetLabel(t_("Drink Base:")).SetFont(Upp::StdFontZ(14)).LeftPosZ(12, 156).TopPosZ(30, 20))
-	ITEM(Upp::Switch, base, SetLabel(t_("Coffee\nTea\nCream")).LeftPosZ(184, 84).TopPosZ(12, 56))
+	ITEM(Upp::Switch, base, SetLabel(t_("Coffee\nTea\nCream")).HSizePosZ(184, 532).TopPosZ(12, 56))
 	ITEM(Upp::Label, sizeLbl, SetLabel(t_("Drink Size:")).SetFont(Upp::StdFontZ(14)).LeftPosZ(12, 156).TopPosZ(102, 20))
 	ITEM(Upp::Switch, size, SetLabel(t_("Small\nMedium\nLarge")).LeftPosZ(184, 84).TopPosZ(84, 56))
 	ITEM(Upp::Label, tempLbl, SetLabel(t_("Drink Temperature:")).SetFont(Upp::StdFontZ(14)).LeftPosZ(12, 156).TopPosZ(174, 20))
 	ITEM(Upp::Switch, temp, SetLabel(t_("\vHot\nIced\nBlended")).LeftPosZ(184, 84).TopPosZ(156, 56))
 	ITEM(Upp::Label, dairyLbl, SetLabel(t_("Dairy Choice:")).SetFont(Upp::StdFontZ(14)).LeftPosZ(12, 156).TopPosZ(228, 20))
-	ITEM(Upp::DropList, dairy, LeftPosZ(184, 128).TopPosZ(228, 20))
+	ITEM(Upp::DropList, dairy, SetFrame(Upp::FieldFrame()).LeftPosZ(184, 128).TopPosZ(228, 20))
 	ITEM(Upp::Label, flavorLbl, SetLabel(t_("Flavors:")).SetFont(Upp::StdFontZ(14)).LeftPosZ(12, 156).TopPosZ(314, 20))
 	ITEM(Upp::ParentCtrl, flavorOptions, SetFrame(Upp::FieldFrame()).LeftPosZ(184, 260).TopPosZ(264, 120))
 	ITEM(Upp::Label, priceLbl, SetLabel(t_("Price:")).SetFont(Upp::StdFontZ(14)).LeftPosZ(12, 156).TopPosZ(400, 20))
-	ITEM(Upp::EditString, price, SetEditable(false).SetFrame(Upp::RightSeparatorFrame()).WantFocus(false).LeftPosZ(184, 260).TopPosZ(400, 20))
+	ITEM(Upp::EditString, price, SetEditable(false).SetFrame(Upp::FieldFrame()).WantFocus(false).LeftPosZ(184, 260).TopPosZ(400, 20))
 	ITEM(Upp::Button, createDrink, SetLabel(t_("Create Drink")).LeftPosZ(12, 432).TopPosZ(436, 20))
+	ITEM(Upp::DocEdit, drinkList, WantFocus(false).SetFrame(Upp::FieldFrame()).SetEditable(false).RightPosZ(12, 332).VCenterPosZ(384, -8))
+	ITEM(Upp::ParentCtrl, writeBtnHolder, RightPosZ(12, 332).BottomPosZ(16, 20))
 END_LAYOUT
 

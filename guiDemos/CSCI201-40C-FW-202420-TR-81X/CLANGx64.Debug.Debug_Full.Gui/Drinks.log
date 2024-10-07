@@ -1,0 +1,7 @@
+* C:\Users\FORTI\OneDrive\Documents\GitHub\CSCI201-40C-FW-202420-TR-81X\guiDemos\CSCI201-40C-FW-202420-TR-81X\CLANGx64.Debug.Debug_Full.Gui\Drinks.exe 07.10.2024 15:10:00, user: FORTI
+
+****************** ASSERT FAILED: Assertion failed in C:\Users\FORTI\OneDrive\Documents\CSCI 201 Assignments\upp1\upp/uppsrc/Core/Vcont.h, line 182
+i >= 0 && i < items
+
+
+LastErrorMessage: The operation completed successfully. (0)

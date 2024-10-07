@@ -1,0 +1,9 @@
+Medium - Blended, Tea, Cream, Peach, Strawberry - $7.50
+
+Small - Hot, Coffee, None, Blueberry, French Vanilla - $5.25
+
+Medium - Iced, Cream, Oat Milk, None - $5.50
+
+Small - Hot, Coffee, None, None - $4.75
+
+Total: $23.00
